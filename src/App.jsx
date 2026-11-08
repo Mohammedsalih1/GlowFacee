@@ -252,7 +252,6 @@ const selectedAgent = agents[activeAgent];
             </div>
             <div className="hero-art" aria-label="صورة تحريرية لمنتجات عناية عامة">
               <div className="hero-image"><img src="/hero-image.jpg" alt="ترتيب هادئ لعبوات عناية بالبشرة بألوان وردية دافئة" /></div>
-              <span className="floating-flower" aria-hidden="true">✳</span>
               <div className="image-note"><strong>خديها واحدة واحدة</strong><span>للبشرة نضارة</span></div>
             </div>
           </div>
