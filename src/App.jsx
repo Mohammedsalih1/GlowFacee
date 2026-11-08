@@ -66,14 +66,14 @@ const clientResults = [
     id: 'client-2',
     before: '/before2.jpeg',
     after: '/after2.jpeg',
-    text:"تخفيف التصبغات وتوحيد اللون"
+    text:"توحيد اللون"
 
   },
   {
     id: 'client-3',
     before: '/before4.jpeg',
     after: '/after4.jpeg',
-    text: "نضارة وإشراقة طبيعية للبشرة"
+    text: "تخفيف التصبغات"
   },
 ];
 
@@ -344,8 +344,8 @@ const selectedAgent = agents[activeAgent];
               <div className="container">
               <div className="routine-head">
                 <span className="eyebrow">ببساطة ومن غير تعقيد</span>
-                <h2 className="section-title">ليش تختاري<br />Glow Face</h2>
-                <p className="section-copy">لأنو بشرتك تستحق الأفضل، اخترنا لك تركيبة متكاملة تجمع بين العلم والطبيعة لتمنحك إشراقة لا تُنسى</p>
+                <h2 className="section-title">لماذا Glow Face؟</h2>
+                <p className="section-copy">لأن بشرتك تستحق الأفضل، اخترنا لك تركيبة متكاملة تجمع بين العلم والطبيعة لتمنحك إشراقة لا تُنسى</p>
             </div>
                 <div className="routine-grid">
                   {benefits.map((benefit) => (
@@ -416,6 +416,7 @@ const selectedAgent = agents[activeAgent];
             </p> */}
           </div>
         </section>
+
         {/* agents */}
         <section className="agents" id="agents" aria-labelledby="agents-title">
           <div className="container">
