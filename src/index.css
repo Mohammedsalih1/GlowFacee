@@ -8,8 +8,10 @@
   background: #fffaf8;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  --rose: #d94d83;
-  --deep-rose: #a83f67;
+  /* --rose: #d94d83; */
+  --rose: #dd8593;
+  /* --deep-rose: #a83f67; */
+  --deep-rose: #dd8593;
   --ink: #4f3038;
   --muted: #8d7478;
   --cream: #fffaf8;

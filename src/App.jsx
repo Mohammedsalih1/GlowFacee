@@ -204,7 +204,7 @@ const selectedAgent = agents[activeAgent];
             {/* <img src="/glow-face-logo.jpeg" alt="شعار Glow Face" /> */}
             <div className="relative group">
               {/* التوهج الخلفي */}
-              <div className="absolute -inset-1 bg-pink-300/50 rounded-full blur-md opacity-75 group-hover:opacity-100 transition duration-300"></div>
+              {/* <div className="absolute -inset-1 bg-pink-300/50 rounded-full blur-md opacity-75 group-hover:opacity-100 transition duration-300"></div> */}
               
               {/* الشعار المموج */}
               <img 
@@ -235,7 +235,7 @@ const selectedAgent = agents[activeAgent];
           <div className="container hero-grid">
             <div className="hero-copy">
               <span className="eyebrow">خبرة 15 عاما</span>
-              <h1>تركيبة Glow Face <span>By Dr: Najat Salih</span></h1>
+              <h1>تركيبة Glow Face <span>By Dr Najat Salih</span></h1>
               <p>تركيبة مصممة للعناية بالبشرة بخبرة 15 عاما في التركيبات الامنة تمنحك اشراقة طبيعية من اول نظرة</p>
               <div className="hero-ctas">
                 <a className="btn btn-primary" href="#routine">احصلي علي تركيبتك الان<Arrow /></a>
