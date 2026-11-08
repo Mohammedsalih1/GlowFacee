@@ -210,8 +210,8 @@ const selectedAgent = agents[activeAgent];
               <img 
                 src="/glow-face-logo.jpeg" 
                 alt="Glow Face Logo" 
-                className="relative h-16 w-16 object-cover shadow-sm border-2 border-white"
-                style={{ borderRadius: '60% 40% 70% 30% / 50% 60% 40% 50%' }}
+                className="relative h-16 w-16 object-cover shadow-sm border-2 border-white rounded-[50%]"
+                // style={{ borderRadius: '60% 40% 70% 30% / 50% 60% 40% 50%' }}
               />
             </div>
           </a>
@@ -235,7 +235,7 @@ const selectedAgent = agents[activeAgent];
           <div className="container hero-grid">
             <div className="hero-copy">
               <span className="eyebrow">خبرة 15 عاما</span>
-              <h1>سحر النضارة مع<span>Glow Face</span></h1>
+              <h1>تركيبة Glow Face <span>By Dr: Najat Salih</span></h1>
               <p>تركيبة مصممة للعناية بالبشرة بخبرة 15 عاما في التركيبات الامنة تمنحك اشراقة طبيعية من اول نظرة</p>
               <div className="hero-ctas">
                 <a className="btn btn-primary" href="#routine">احصلي علي تركيبتك الان<Arrow /></a>
@@ -260,10 +260,11 @@ const selectedAgent = agents[activeAgent];
 
         <div className="marquee" aria-label="عناية بسيطة، لحظات أهدى، جمالك بطريقتك">
           <div className="container marquee-track">
-            <span className="marquee-item">عناية بسيطة <i /></span>
-            <span className="marquee-item">لحظات أهدى <i /></span>
-            <span className="marquee-item">جمالك بطريقتك <i /></span>
-            <span className="marquee-item">مساحة لنفسك <i /></span>
+            <span className="marquee-item">تركيبة سحرية<i /></span>
+            <span className="marquee-item">#تحدي_10_يوم<i /></span>
+            <span className="marquee-item">وداعا تصبغات<i /></span>
+            <span className="marquee-item">وداعا حبوب<i /></span>
+            <span className="marquee-item">وداعا اثار<i /></span>
           </div>
         </div>
 
