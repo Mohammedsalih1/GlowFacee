@@ -426,14 +426,14 @@ button { cursor: pointer; }
 .agent-arrow {
   display: grid;
   font-weight: bold;
-  /* width: 40px; */
-  /* height: 40px; */
+  width: 40px;
+  height: 40px;
   padding: 4px 6px;
   place-items: center;
-  border-radius: 8px;
+  border-radius: 50%;
   color: white;
   background: var(--deep-rose);
-  font-size: 22px;
+  /* font-size: 22px; */
   transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 .agent-arrow:hover {

@@ -1,3 +1,4 @@
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ReactCountryFlag from "react-country-flag";
 
 import { useState } from 'react';
@@ -484,7 +485,9 @@ const selectedAgent = agents[activeAgent];
                   onClick={() => showAgent(activeAgent - 1)}
                   aria-label="الوكيلة السابقة"
                 >
-                  <span aria-hidden="true">السابق</span>
+                  {/* <span aria-hidden="true"></span> */}
+                  <ChevronRight size={30} />
+
                 </button>
 
                 <div className="agent-dots" role="group" aria-label="اختاري دولة">
@@ -507,7 +510,9 @@ const selectedAgent = agents[activeAgent];
                   onClick={() => showAgent(activeAgent + 1)}
                   aria-label="الوكيلة التالية"
                 >
-                  <span aria-hidden="true">التالي</span>
+                  {/* <span aria-hidden="true">التالي</span> */}
+                  <ChevronLeft size={30} />
+
                 </button>
               </div>
             </div>
