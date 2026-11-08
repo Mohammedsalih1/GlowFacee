@@ -1,3 +1,5 @@
+import ReactCountryFlag from "react-country-flag";
+
 import { useState } from 'react';
 
 const Arrow = () => <span className="arrow" aria-hidden="true">←</span>;
@@ -77,91 +79,98 @@ const clientResults = [
 const agents = [
   {
     country: 'السودان',
-    // flag: '🇸🇩',
+    flag: 'SD',
     cities: 'الخرطوم، بحري، أم درمان',
     agentName: 'علا الشيخ',
     whatsapp: '+249116340339',
   },
   {
     country: 'مصر',
-    // flag: '🇸🇦',
+    flag: 'EG',
     // cities: 'الرياض، مكة، جدة، الدمام',
     agentName: 'مودة',
     whatsapp: '+201021638719',
   },
   {
     country: 'مصر',
-    flag: '🇪🇬',
+    flag: 'EG',
     cities: 'الإسكندرية',
     agentName: 'نهلة',
     whatsapp: '+201055958309',
   },
   {
     country: 'الإمارات',
-    // flag: '🇦🇪',
+    flag: 'AE',
     cities: 'دبي، أبوظبي، الشارقة',
     agentName: "دكتورة نجاة",
     whatsapp: '+249965298019',
   },
   {
     country: 'امريكا',
-    flag: '🇶🇦',
+    flag: 'US',
     // cities: 'الدوحة، الوكرة',
     agentName: 'أمل',
     whatsapp: '+17816009747',
   },
   {
     country: 'قطر',
-    flag: '🇶🇦',
+    flag: 'QA',
     // cities: 'الدوحة، الوكرة',
     agentName: "الاء",
     whatsapp: '+97470885447',
   },
   {
     country: 'السعودية',
-    // flag: '🇶🇦',
+    flag: 'SA',
     cities: 'نجران',
     agentName: 'دعاء',
     whatsapp: '+249117082835',
   },
   {
     country: 'السعودية',
-    flag: '🇶🇦',
+    flag: 'SA',
     cities: 'الرياض',
     agentName: 'نهلة',
     whatsapp: '+249127313767',
   },
   {
     country: "كندا",
-    // flag: '🇶🇦',
+    flag: 'CA',
     // cities: 'الرياض',
     agentName: 'نانسي',
     whatsapp: '+18254409497',
   },
   {
     country: "كندا",
-    // flag: '🇶🇦',
+    flag: 'CA',
     // cities: 'الرياض',
     agentName: "عبير",
     whatsapp: '+249910685985',
   },
   {
-    country: "هولندا & فرنسا",
-    // flag: '🇶🇦',
+    country: "هولندا",
+    flag: 'NL',
+    // cities: 'الرياض',
+    agentName: "نوال",
+    whatsapp: '+31686069192',
+  },
+  {
+    country: "فرنسا",
+    flag: 'FR',
     // cities: 'الرياض',
     agentName: "نوال",
     whatsapp: '+31686069192',
   },
   {
     country: "تركيا",
-    // flag: '🇶🇦',
+    flag: 'TR',
     // cities: 'الرياض',
     agentName: "ام لين",
     whatsapp: '+905314365015',
   },
   {
     country: "بريطانيا",
-    flag: "",
+    flag: "GB",
     // cities: 'الرياض',
     agentName: "الاء",
     whatsapp: '+447877278769',
@@ -412,9 +421,9 @@ const selectedAgent = agents[activeAgent];
             <div className="agents-heading">
               <span className="eyebrow">Glow Face أقرب ليكي</span>
               <h2 className="section-title" id="agents-title">
-                وكلاؤنا حول العالم
+                مناديب حول العالم
               </h2>
-              <p>اختاري الوكيلة الأقرب ليكي وتواصلي معاها مباشرة عبر واتساب.</p>
+              <p>اختاري المندوبةالأقرب ليكي وتواصلي معاها مباشرة عبر واتساب.</p>
             </div>
 
             <div className="agents-carousel">
@@ -427,13 +436,19 @@ const selectedAgent = agents[activeAgent];
                 aria-live="polite"
               >
                 <div className="agent-card-top">
-                  {/* <span className="agent-flag" aria-hidden="true">
-                    {selectedAgent.flag}
-                  </span> */}
-                  <span className="agent-count">
+                  <span className="agent-flag" aria-hidden="true">
+                    {/* {selectedAgent.flag} */}
+                    <ReactCountryFlag 
+                      countryCode={selectedAgent.flag} 
+                      svg 
+                      style={{ width: '2em', height: '2em' }} 
+                      title="Sudan" 
+                  />
+                  </span>
+                  {/* <span className="agent-count">
                     {String(activeAgent + 1).padStart(2, '0')} /{' '}
                     {String(agents.length).padStart(2, '0')}
-                  </span>
+                  </span> */}
                 </div>
 
                 <h3>{selectedAgent.country}</h3>
@@ -444,7 +459,7 @@ const selectedAgent = agents[activeAgent];
                 </div> */}
 
                 <div className="agent-detail agent-name">
-                  <span className="agent-detail-label">الوكيلة</span>
+                  <span className="agent-detail-label">المندوبة</span>
                   <p>{selectedAgent.agentName}</p>
                 </div>
 
@@ -469,7 +484,7 @@ const selectedAgent = agents[activeAgent];
                   onClick={() => showAgent(activeAgent - 1)}
                   aria-label="الوكيلة السابقة"
                 >
-                  <span aria-hidden="true">→</span>
+                  <span aria-hidden="true">السابق</span>
                 </button>
 
                 <div className="agent-dots" role="group" aria-label="اختاري دولة">
@@ -492,13 +507,9 @@ const selectedAgent = agents[activeAgent];
                   onClick={() => showAgent(activeAgent + 1)}
                   aria-label="الوكيلة التالية"
                 >
-                  <span aria-hidden="true">←</span>
+                  <span aria-hidden="true">التالي</span>
                 </button>
               </div>
-
-              <p className="agents-note">
-                أرقام واتساب المعروضة مؤقتة للتجربة، وتُستبدل بالأرقام الرسمية قبل النشر.
-              </p>
             </div>
           </div>
         </section>
