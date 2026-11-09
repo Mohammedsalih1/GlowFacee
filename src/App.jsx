@@ -1,6 +1,7 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ReactCountryFlag from "react-country-flag";
 import OrderRequestForm from './components/OrderRequestForm';
+import ProductsSection from './components/ProductsSection.jsx';
 
 import { useState } from 'react';
 
@@ -234,6 +235,7 @@ const selectedAgent = agents[activeAgent];
           <nav className="nav-links" id="mobile-navigation" data-open={menuOpen} aria-label="التنقل الرئيسي">
             <a href="#home" onClick={closeMenu}>الرئيسية</a>
             <a href="#about" onClick={closeMenu}>عن Glow Face</a>
+            <a href="#products" onClick={closeMenu}>المنتجات</a>
             <a href="#results" onClick={closeMenu}> تجارب وآراء العملاء</a>
             <a href="#support" onClick={closeMenu}>تواصلي معنا</a>
           </nav>
@@ -373,7 +375,7 @@ const selectedAgent = agents[activeAgent];
                 </div>
               </div>
         </section>
-
+        <ProductsSection />
         {/* <section className="manifesto" id="about">
           <div className="container manifesto-panel">
             <div className="manifesto-art" role="img" aria-label="مشهد هادئ للعناية بالبشرة في ضوء دافئ" />
