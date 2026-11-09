@@ -1,5 +1,6 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ReactCountryFlag from "react-country-flag";
+import OrderRequestForm from './components/OrderRequestForm';
 
 import { useState } from 'react';
 
@@ -189,6 +190,11 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openQuestion, setOpenQuestion] = useState(0);
   const [activeAgent, setActiveAgent] = useState(0);
+  const [orderFormOpen, setOrderFormOpen] = useState(false);
+  const openOrderForm = () => {
+    closeMenu();
+    setOrderFormOpen(true);
+  };
 
   const supportPhoneDisplay = `+${SUPPORT_WHATSAPP_NUMBER.slice(0, 3)} ${SUPPORT_WHATSAPP_NUMBER.slice(3, 6)} ${SUPPORT_WHATSAPP_NUMBER.slice(6, 9)} ${SUPPORT_WHATSAPP_NUMBER.slice(9)}`;
   const supportMessage = encodeURIComponent(
@@ -231,7 +237,14 @@ const selectedAgent = agents[activeAgent];
             <a href="#results" onClick={closeMenu}> تجارب وآراء العملاء</a>
             <a href="#support" onClick={closeMenu}>تواصلي معنا</a>
           </nav>
-          <a className="btn btn-primary header-action" href="#agents">اطلبي الان<Arrow /></a>
+          {/* <a className="btn btn-primary header-action" href="#agents">اطلبي الان<Arrow /></a> */}
+          <button
+            className="btn btn-primary header-action"
+            type="button"
+            onClick={openOrderForm}
+          >
+            اطلبي الان<Arrow />
+          </button>
           <button className="menu-toggle" type="button" aria-label={menuOpen ? 'إغلاق القائمة' : 'فتح القائمة'} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen
               ? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="m6 6 12 12M18 6 6 18" /></svg>
@@ -248,7 +261,7 @@ const selectedAgent = agents[activeAgent];
               <h1>تركيبة Glow Face <span>By Dr Najat Salih</span></h1>
               <p>تركيبة مصممة للعناية بالبشرة بخبرة 15 عاما في التركيبات الامنة تمنحك اشراقة طبيعية من اول نظرة</p>
               <div className="hero-ctas">
-                <a className="btn btn-primary" href="#routine">احصلي علي تركيبتك الان<Arrow /></a>
+                <button className="btn btn-primary" onClick={openOrderForm} >احصلي علي تركيبتك الان<Arrow /></button>
                 {/* <a className="btn btn-quiet" href="#about">حكاية Glow Face</a> */}
               </div>
               <div className="hero-meta ">
@@ -640,6 +653,10 @@ const selectedAgent = agents[activeAgent];
           </div>
         </section> */}
       </main>
+
+      {orderFormOpen && (
+      <OrderRequestForm onClose={() => setOrderFormOpen(false)} />
+      )}
 
       {/* <footer className="footer"> */}
         {/* <div className="container">
