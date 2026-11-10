@@ -90,6 +90,18 @@ const clientResults = [
     after: '/after6.jpeg',
     text: "تخفيف التصبغات"
   },
+  {
+    id: 'client-5',
+    before: '/after7.jpeg',
+    after: '/after8.jpeg',
+    // text: "تخفيف التصبغات"
+  },
+  {
+    id: 'client-5',
+    before: '/after9.jpeg',
+    after: '/after10.jpeg',
+    // text: "تخفيف التصبغات"
+  },
 ];
 
 const agents = [
@@ -425,17 +437,23 @@ const selectedAgent = agents[activeAgent];
                         src={result.before}
                         alt={`قبل العناية — تجربة عميلة ${index + 1}`}
                       />
+                      {result.text && 
                       <figcaption>قبل</figcaption>
+                      }
                     </figure>
                     <figure className="result-photo">
                       <img
                         src={result.after}
                         alt={`بعد العناية — تجربة عميلة ${index + 1}`}
                       />
+                      {result.text && 
                       <figcaption>بعد</figcaption>
+                      }
                     </figure>
                   </div>
+                  {result.text && 
                   <p className="result-caption">{result.text}</p>
+                  }
                 </article>
               ))}
             </div>

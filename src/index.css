@@ -231,6 +231,12 @@ button { cursor: pointer; }
   gap: 3px;
   background: #f5e5e8;
 }
+.result-pair2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3px;
+  background: #f5e5e8;
+}
 .result-photo {
   position: relative;
   min-width: 0;
