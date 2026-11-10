@@ -29,36 +29,63 @@ const whatsappByCountry = {
   تركيا: '+905314365015',
 };
 const initialForm = {
-  name: '',
-  phone: '',
-  backupPhone: '',
-  country: '',
-  address: '',
-  product: '',
-  quantity: '1',
-  notes: '',
-  payment: '',
-  confirmed: false,
-};
+    name: '',
+    phone: '',
+    backupPhone: '',
+    country: '',
+    address: '',
+    products: [],
+    quantity: '1',
+    notes: '',
+    payment: '',
+    confirmed: false,
+  };
+
+  function getInitialProducts(initialProduct) {
+    const selectedProducts = Array.isArray(initialProduct)
+      ? initialProduct
+      : initialProduct
+        ? [initialProduct]
+        : [];
+    return selectedProducts.filter((product) => products.includes(product));
+  }
+
+
 function toEnglishDigits(value) {
   return value
     .replace(/[٠-٩]/g, (digit) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(digit)))
     .replace(/[۰-۹]/g, (digit) => String('۰۱۲۳۴۵۶۷۸۹'.indexOf(digit)));
 }
 function OrderRequestForm({ onClose }) {
-  const dialogRef = useRef(null);
-  const [form, setForm] = useState(initialForm);
-  const [message, setMessage] = useState('');
-  const [messageType, setMessageType] = useState('');
-  const [fallbackLink, setFallbackLink] = useState('');
-  useEffect(() => {
-    const dialog = dialogRef.current;
-    if (!dialog) return undefined;
-    if (!dialog.open) dialog.showModal();
-    return () => {
-      if (dialog.open) dialog.close();
-    };
+    const dialogRef = useRef(null);
+    const [form, setForm] = useState(() => ({
+    ...initialForm,
+    products: getInitialProducts(initialForm),
+    }));
+    const [message, setMessage] = useState('');
+    const [messageType, setMessageType] = useState('');
+    const [fallbackLink, setFallbackLink] = useState('');
+    useEffect(() => {
+        const dialog = dialogRef.current;
+        if (!dialog) return undefined;
+        if (!dialog.open) dialog.showModal();
+        return () => {
+        if (dialog.open) dialog.close();
+        };
   }, []);
+
+  function toggleProduct(product) {
+    setForm((current) => ({
+      ...current,
+      products: current.products.includes(product)
+        ? current.products.filter((selectedProduct) => selectedProduct !== product)
+        : [...current.products, product],
+    }));
+    setMessage('');
+    setMessageType('');
+    setFallbackLink('');
+  }
+
   function updateField(event) {
     const { name, value, checked, type } = event.target;
     setForm((current) => ({
@@ -102,7 +129,7 @@ function OrderRequestForm({ onClose }) {
       `رقم احتياط: ${form.backupPhone}`,
       `الدولة: ${form.country}`,
       `السكن بالتفصيل: ${form.address}`,
-      `نوع التركيبة: ${form.product}`,
+      `أنواع التركيبة: ${form.products.join('، ')}`,
       `عدد الطلبية: ${form.quantity}`,
       `طرق الدفع: ${form.payment}`,
       `ملاحظات: ${form.notes.trim() || 'لا توجد'}`,
@@ -129,7 +156,13 @@ function OrderRequestForm({ onClose }) {
       setMessage('تعذر فتح واتساب. تحققي من اتصالك بالإنترنت ثم حاولي مرة أخرى.');
       setMessageType('error');
     }
+    if (form.products.length === 0) {
+        setMessage('يرجى اختيار تركيبة واحدة على الأقل لإكمال الطلب.');
+        setMessageType('error');
+        return;
+      }
   }
+//   
   return (
     <dialog
       className="order-dialog"
@@ -226,20 +259,27 @@ function OrderRequestForm({ onClose }) {
               placeholder="المدينة، الحي، الشارع وأقرب علامة مميزة"
             />
           </label>
-          <label className="order-field">
-            <span>نوع التركيبة <i>*</i></span>
-            <select
-              name="product"
-              value={form.product}
-              onChange={updateField}
-              required
-            >
-              <option value="" disabled>اختاري المنتج</option>
-              {products.map((product) => (
-                <option value={product} key={product}>{product}</option>
-              ))}
-            </select>
-          </label>
+            <fieldset
+                className="order-field order-field-wide order-products-fieldset"
+                aria-required="true"
+                >
+                <legend>نوع التركيبة <i>*</i></legend>
+                <p className="order-products-hint">يمكنك اختيار أكثر من منتج</p>
+                <div className="order-product-options">
+                    {products.map((product) => (
+                    <label className="order-product-choice" key={product}>
+                        <input
+                        type="checkbox"
+                        name="products"
+                        value={product}
+                        checked={form.products.includes(product)}
+                        onChange={() => toggleProduct(product)}
+                        />
+                        <span>{product}</span>
+                    </label>
+                    ))}
+                </div>
+            </fieldset>
           <label className="order-field">
             <span>عدد الطلبية <i>*</i></span>
             <input

@@ -2,6 +2,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ReactCountryFlag from "react-country-flag";
 import OrderRequestForm from './components/OrderRequestForm';
 import ProductsSection from './components/ProductsSection.jsx';
+import CustomerReviews from './components/CustomerReviews.jsx';
 
 import { useState } from 'react';
 
@@ -77,6 +78,18 @@ const clientResults = [
     after: '/after4.jpeg',
     text: "تخفيف التصبغات"
   },
+  {
+    id: 'client-4',
+    before: '/before5.jpeg',
+    after: '/after5.jpeg',
+    text: "تخفيف التصبغات"
+  },
+  {
+    id: 'client-5',
+    before: '/before6.jpeg',
+    after: '/after6.jpeg',
+    text: "تخفيف التصبغات"
+  },
 ];
 
 const agents = [
@@ -98,7 +111,7 @@ const agents = [
     country: 'مصر',
     flag: 'EG',
     cities: 'الإسكندرية',
-    agentName: 'نهلة',
+    agentName: 'نهلة | الاسكندرية',
     whatsapp: '+201055958309',
   },
   {
@@ -431,6 +444,7 @@ const selectedAgent = agents[activeAgent];
             </p> */}
           </div>
         </section>
+        <CustomerReviews />
 
         {/* agents */}
         <section className="agents" id="agents" aria-labelledby="agents-title">
@@ -440,7 +454,7 @@ const selectedAgent = agents[activeAgent];
               <h2 className="section-title" id="agents-title">
                 مناديب حول العالم
               </h2>
-              <p>اختاري المندوبةالأقرب ليكي وتواصلي معاها مباشرة عبر واتساب.</p>
+              <p>اختاري المندوبة الأقرب ليكي وتواصلي معاها مباشرة عبر واتساب.</p>
             </div>
 
             <div className="agents-carousel">
@@ -681,7 +695,7 @@ const selectedAgent = agents[activeAgent];
             
             {/* العمود الأول: الشعار والتعريف */}
             <div>
-            <div className="relative group">
+            <div className="relative group footer-brand">
               {/* التوهج الخلفي */}
               {/* <div className="absolute -inset-1 bg-pink-300/50 rounded-full blur-md opacity-75 group-hover:opacity-100 transition duration-300"></div> */}
               
@@ -690,7 +704,6 @@ const selectedAgent = agents[activeAgent];
                 src="/glow-face-logo.jpeg" 
                 alt="Glow Face Logo" 
                 className="relative h-16 w-16 object-cover shadow-sm border-2 border-white"
-                style={{ borderRadius: '60% 40% 70% 30% / 50% 60% 40% 50%' }}
               />
             </div>
               <p className="text-sm text-gray-600 leading-relaxed mb-4">
