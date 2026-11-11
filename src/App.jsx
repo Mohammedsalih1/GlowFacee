@@ -308,7 +308,7 @@ const selectedAgent = agents[activeAgent];
             <div className="hero-copy">
               <span className="eyebrow">خبرة 15 عاما</span> <br />
               <p className='h1'>تركيبة <span className='eng-font'>Glow Face</span><br /><span className='eng-font'>By Dr Najat Salih</span></p>
-              <p>تركيبة مصممة للعناية بالبشرة بخبرة 15 عاما في التركيبات الامنة, وانها تركيب طبية وتجميلية في نفس الوقت. Glow face عيادة تجميل في علبة</p>
+              <p>تركيبة مصممة للعناية بالبشرة بخبرة 15 عاما في التركيبات الامنة, وانها تركيبة طبية وتجميلية في نفس الوقت. Glow face عيادة تجميل في علبة</p>
               <div className="hero-ctas">
                 <button className="btn btn-primary" onClick={openOrderForm} >احصلي علي تركيبتك الان<Arrow /></button>
                 {/* <a className="btn btn-quiet" href="#about">حكاية Glow Face</a> */}
@@ -465,20 +465,20 @@ const selectedAgent = agents[activeAgent];
                   <div className="result-pair" dir="ltr">
                     <figure className="result-photo">
                       <img
-                        src={result.before}
-                        alt={`قبل العناية — تجربة عميلة ${index + 1}`}
-                      />
-                      {result.noValue && 
-                      <figcaption>قبل</figcaption>
-                      }
-                    </figure>
-                    <figure className="result-photo">
-                      <img
                         src={result.after}
                         alt={`بعد العناية — تجربة عميلة ${index + 1}`}
                       />
                       {result.noValue && 
                       <figcaption>بعد</figcaption>
+                      }
+                    </figure>
+                    <figure className="result-photo">
+                      <img
+                        src={result.before}
+                        alt={`قبل العناية — تجربة عميلة ${index + 1}`}
+                      />
+                      {result.noValue && 
+                      <figcaption>قبل</figcaption>
                       }
                     </figure>
                   </div>
