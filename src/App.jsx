@@ -106,8 +106,8 @@ const clientResults = [
   },
   {
     id: 'client-4',
-    before: '/after5.jpeg',
-    after: '/before5.jpeg',
+    before: '/before5.jpeg',
+    after: '/after5.jpeg',
     text: "تخفيف التصبغات",
     noValue: true
   },
@@ -800,8 +800,8 @@ const selectedAgent = agents[activeAgent];
           </div>
 
           {/* الخط السفلي وحقوق النشر */}
-          <div className="max-w-7xl mx-auto px-6 pt-6 border-t border-pink-200/60 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
-            <p>© 2026 Glow Face — جميع الحقوق محفوظة.</p>
+          <div className="max-w-7xl mx-auto px-6 pt-6 border-t border-pink-200/60 flex flex-col md:flex-row justify-between items-center text-[14px] text-gray-500 gap-4">
+            <p>© 2026 Glow Face — جميع الحقوق محفوظة.</p> <p>Made with ❤️ by <a href="https://msm.technology" target="_blank" style={{color: "#dd8593"}} rel="noopener noreferrer">MSM Technology</a></p>
           </div>
         </footer>
 
