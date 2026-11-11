@@ -1311,6 +1311,7 @@ button { cursor: pointer; }
   .manifesto-art { min-height: 270px; }
   .manifesto-copy { padding: 34px 25px 37px; }
   .manifesto-copy .section-title { font-size: 35px; }
+  .manifesto-art2 {min-height: 465px;}
   .values { padding-bottom: 78px; }
   .values-row { grid-template-columns: 1fr; }
   .value { padding: 23px 8px; }
