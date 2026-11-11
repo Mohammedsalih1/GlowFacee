@@ -62,8 +62,9 @@ const clientResults = [
   {
     id: 'client-6',
     before: '/review1.jpeg',
-    after: '/review1.jpeg',
+    after: '/review2b.jpeg',
     text: "علاج الحبوب والاثار",
+    noValue: true
   },
   {
     id: 'client-5',
@@ -104,13 +105,13 @@ const clientResults = [
     noValue: true
 
   },
-  {
-    id: 'client-4',
-    before: '/before5.jpeg',
-    after: '/after5.jpeg',
-    text: "تخفيف التصبغات",
-    noValue: true
-  },
+  // {
+  //   id: 'client-4',
+  //   before: '/before5.jpeg',
+  //   after: '/after5.jpeg',
+  //   text: "تخفيف التصبغات",
+  //   noValue: true
+  // },
   {
     id: 'client-7',
     before: '/after7.jpeg',
