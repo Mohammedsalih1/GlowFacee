@@ -60,47 +60,69 @@ const benefits = [
 ];
 const clientResults = [
   {
+    id: 'client-6',
+    before: '/review1.jpeg',
+    after: '/review1.jpeg',
+    text: "علاج الحبوب والاثار",
+  },
+  {
+    id: 'client-5',
+    before: '/before6.jpeg',
+    after: '/after6.jpeg',
+    text: "مشاكل التصبغات وضربة الشمس",
+    noValue: true
+
+  },
+  {
+    id: 'client-9',
+    before: '/review3.jpeg',
+    after: '/review33.jpeg',
+    text: "الاثار والكلف والتصبغات",
+    noValue: true
+  },
+  {
     id: 'client-1',
     before: '/before1.jpeg',
     after: '/after1.jpeg',
-    text: "علاج آثار الحبوب بفعالية"
+    text: "علاج آثار الحبوب بفعالية",
+    noValue: true
+
   },
   {
     id: 'client-2',
     before: '/before2.jpeg',
     after: '/after2.jpeg',
-    text:"توحيد اللون"
+    text:"توحيد اللون",
+    noValue: true
 
   },
   {
     id: 'client-3',
     before: '/before4.jpeg',
     after: '/after4.jpeg',
-    text: "تخفيف التصبغات"
+    text: "تخفيف التصبغات",
+    noValue: true
+
   },
   {
     id: 'client-4',
-    before: '/before5.jpeg',
-    after: '/after5.jpeg',
-    text: "تخفيف التصبغات"
+    before: '/after5.jpeg',
+    after: '/before5.jpeg',
+    text: "تخفيف التصبغات",
+    noValue: true
   },
   {
-    id: 'client-5',
-    before: '/before6.jpeg',
-    after: '/after6.jpeg',
-    text: "تخفيف التصبغات"
-  },
-  {
-    id: 'client-5',
+    id: 'client-7',
     before: '/after7.jpeg',
     after: '/after8.jpeg',
-    // text: "تخفيف التصبغات"
+    text: "النضارة والدورة والنعومة",
   },
   {
-    id: 'client-5',
-    before: '/after9.jpeg',
-    after: '/after10.jpeg',
-    // text: "تخفيف التصبغات"
+    id: 'client-8',
+    before: '/review2.jpeg',
+    after: '/review22.jpeg',
+    text: "علاج الحبوب والاثار",
+    noValue: true
   },
 ];
 
@@ -151,14 +173,14 @@ const agents = [
     country: 'السعودية',
     flag: 'SA',
     cities: 'نجران',
-    agentName: 'دعاء',
+    agentName: 'دعاء | نجران',
     whatsapp: '+249117082835',
   },
   {
     country: 'السعودية',
     flag: 'SA',
     cities: 'الرياض',
-    agentName: 'نهلة',
+    agentName: 'نهلة | الرياض',
     whatsapp: '+249127313767',
   },
   {
@@ -284,9 +306,9 @@ const selectedAgent = agents[activeAgent];
         <section className="hero" id="home">
           <div className="container hero-grid">
             <div className="hero-copy">
-              <span className="eyebrow">خبرة 15 عاما</span>
-              <h1>تركيبة Glow Face <span>By Dr Najat Salih</span></h1>
-              <p>تركيبة مصممة للعناية بالبشرة بخبرة 15 عاما في التركيبات الامنة تمنحك اشراقة طبيعية من اول نظرة</p>
+              <span className="eyebrow">خبرة 15 عاما</span> <br />
+              <p className='h1'>تركيبة <span className='eng-font'>Glow Face</span><br /><span className='eng-font'>By Dr Najat Salih</span></p>
+              <p>تركيبة مصممة للعناية بالبشرة بخبرة 15 عاما في التركيبات الامنة, وانها تركيب طبية وتجميلية في نفس الوقت. Glow face عيادة تجميل في علبة</p>
               <div className="hero-ctas">
                 <button className="btn btn-primary" onClick={openOrderForm} >احصلي علي تركيبتك الان<Arrow /></button>
                 {/* <a className="btn btn-quiet" href="#about">حكاية Glow Face</a> */}
@@ -356,6 +378,7 @@ const selectedAgent = agents[activeAgent];
             aria-label="منتجات Glow Face في مشهد عناية هادئ"
           />
 
+
           <div className="manifesto-copy">
             <span className="eyebrow">تركيبة Glow Face</span>
             <h2 className="section-title">تركيبة مركّزة، وعناية عن وعي.</h2>
@@ -377,6 +400,14 @@ const selectedAgent = agents[activeAgent];
             </a>
           </div>
         </div>
+        <div className='image-2 container manifesto-panel'>
+
+        <div
+            className="manifesto-art2"
+            role="img"
+            aria-label="منتجات Glow Face في مشهد عناية هادئ"
+          />
+        </div>
         </section>
 
         {/* why glowface */}
@@ -384,7 +415,7 @@ const selectedAgent = agents[activeAgent];
               <div className="container">
               <div className="routine-head">
                 <span className="eyebrow">ببساطة ومن غير تعقيد</span>
-                <h2 className="section-title">لماذا Glow Face؟</h2>
+                <h2 className="section-title">لماذا <span className='eng-font'>Glow Face؟</span></h2>
                 <p className="section-copy">لأن بشرتك تستحق الأفضل، اخترنا لك تركيبة متكاملة تجمع بين العلم والطبيعة لتمنحك إشراقة لا تُنسى</p>
             </div>
                 <div className="routine-grid">
@@ -422,7 +453,7 @@ const selectedAgent = agents[activeAgent];
             <div className="results-heading">
               <span className="eyebrow">#تحدي_10_أيام | نتائج حقيقية وموثوقة</span>
               <h2 className="section-title" id="results-title">
-              قصص نجاح وإشراقة لا تُنسى مع Glow Face
+              قصص نجاح وإشراقة لا تُنسى مع <span className='eng-font'>Glow Face</span>
               </h2>
               <p>
               تعرفي على قصص حقيقية لعميلات استعدن نضارة وحيوية بشرتهن خلال أيام فقط بفضل التركيبة الآمنة.
@@ -437,7 +468,7 @@ const selectedAgent = agents[activeAgent];
                         src={result.before}
                         alt={`قبل العناية — تجربة عميلة ${index + 1}`}
                       />
-                      {result.text && 
+                      {result.noValue && 
                       <figcaption>قبل</figcaption>
                       }
                     </figure>
@@ -446,7 +477,7 @@ const selectedAgent = agents[activeAgent];
                         src={result.after}
                         alt={`بعد العناية — تجربة عميلة ${index + 1}`}
                       />
-                      {result.text && 
+                      {result.noValue && 
                       <figcaption>بعد</figcaption>
                       }
                     </figure>
@@ -730,9 +761,14 @@ const selectedAgent = agents[activeAgent];
               {/* وسائل التواصل مع أيقونات SVG */}
               <div className="flex gap-3">
                 {/* فيسبوك */}
-                <a href="https://facebook.com/glowface12" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-pink-600 border border-pink-200 hover:bg-pink-600 hover:text-white transition shadow-sm" title="فيسبوك">
+                <a href="https://facebook.com/glowface12" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-pink-600 border border-pink-200 hover:bg-[#dd8593] hover:text-white transition shadow-sm" title="فيسبوك">
                   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </a>
+                <a href="https://www.tiktok.com/@glowface41?_r=1&_t=ZS-9BIUJMR1mVN" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-pink-600 border border-pink-200 hover:bg-[#dd8593] hover:text-white transition shadow-sm" title="تيك توك">
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.242V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002-.001a2.895 2.895 0 0 1 3.144-4.25v-3.47a6.345 6.345 0 0 0-5.345 6.273 6.347 6.347 0 0 0 9.805 5.304 6.34 6.34 0 0 0 2.54-5.082V9.083a8.196 8.196 0 0 0 4.786 1.516V7.154a4.81 4.81 0 0 1-1.053-.468z"/>
                   </svg>
                 </a>
               </div>

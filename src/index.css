@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
 @import 'tailwindcss';
@@ -32,7 +33,9 @@ button, a { font: inherit; }
 a { color: inherit; text-decoration: none; }
 button { cursor: pointer; }
 ::selection { background: #f5c7d5; color: #542d3b; }
-
+.eng-font {
+  font-family: "Agbalumo", system-ui;
+}
 .container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--deep-rose); font-weight: 700; font-size: 14px; letter-spacing: .02em; }
 .eyebrow::before { content: ''; width: 24px; height: 1px; background: currentColor; }
@@ -65,8 +68,8 @@ button { cursor: pointer; }
 .hero-copy { position: relative; z-index: 1; padding-block: 40px; }
 .hero-copy .eyebrow { background: #f9e9ec; border-radius: 99px; padding: 8px 15px; }
 .hero-copy .eyebrow::before { width: 7px; height: 7px; border-radius: 50%; }
-.hero h1 { max-width: 550px; font-size: 3rem; line-height: 1.05; font-weight: bold; letter-spacing: -.045em; margin: 23px 0 19px; }
-.hero h1 span { color: var(--rose); display: block; }
+.hero .h1 { max-width: 550px; font-size: 3rem; line-height: 1.05; font-weight: bold; letter-spacing: -.045em; margin: 23px 0 19px; }
+.hero .h1 span { color: var(--rose); }
 .hero-copy p { max-width: 460px; color: #806b70; font-size: 20px; line-height: 1.8; margin: 0 0 29px; }
 .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero-meta { margin-top: 38px; display: flex; align-items: center; gap: 14px; color: #876b72; font-size: 15px; }
@@ -779,6 +782,7 @@ button { cursor: pointer; }
   font-size: 12px;
   line-height: 1.45;
 }
+
 /* about glowface */
 /* order form */
 .mobile-order-action { display: none; }
@@ -1051,6 +1055,95 @@ button { cursor: pointer; }
   background: transparent;
   box-shadow: none;
 }
+
+/* new product styles */
+.order-product-options {
+  display: grid;
+  gap: 10px;
+}
+.order-product-choice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 54px;
+  padding: 9px 12px;
+  border: 1px solid #efd9e1;
+  border-radius: 14px;
+  background: #fff;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+.order-product-choice.is-selected {
+  border-color: #d6819a;
+  background: #fff7fa;
+}
+.order-product-label {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  cursor: pointer;
+}
+.order-product-label input {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  accent-color: #c86f8b;
+  cursor: pointer;
+}
+.order-product-label span {
+  color: #563343;
+  font-weight: 600;
+}
+.order-product-stepper {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid #efd9e1;
+  border-radius: 999px;
+  background: #fff;
+}
+.order-product-stepper button {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: #f8e8ee;
+  color: #744455;
+  font-size: 21px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+.order-product-stepper button:hover:not(:disabled) {
+  background: #d6819a;
+  color: #fff;
+}
+.order-product-stepper button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+.order-product-quantity {
+  min-width: 30px;
+  color: #563343;
+  font-weight: 700;
+  text-align: center;
+}
+.order-products-total {
+  margin-top: 12px;
+  color: #704653;
+  font-size: 14px;
+}
+.order-products-total strong {
+  color: #c86f8b;
+}
+/* new product styles */
 /* order form */
 /* products */
 .products-section { position: relative; overflow: hidden; padding: 96px 0 104px; background: #fff3f5; }
@@ -1115,6 +1208,8 @@ button { cursor: pointer; }
 .manifesto { padding: 0 0 120px; }
 .manifesto-panel { min-height: 405px; background: #f6e6e3; border-radius: 28px; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
 .manifesto-art { min-height: 405px; background-image: linear-gradient(0deg, #592d3b24, transparent 50%), url('/aboutus.jpeg'); background-size: cover; background-position: center 65%; }
+.manifesto-art2 { min-height: 600px; background-image: linear-gradient(0deg, #592d3b24, transparent 50%), url('/about-image2.jpeg'); background-size: cover; background-position: center 65%; }
+.image-2 {margin-top: 2rem; background: transparent;}
 .manifesto-copy { padding: 66px clamp(30px, 6vw, 82px); display: flex; flex-direction: column; justify-content: center; }
 .manifesto-copy .section-title { font-size: clamp(32px, 4vw, 48px); }
 .manifesto-copy p { color: #7f666b; font-size: 18px; line-height: 1.8; margin: 0 0 24px; }
