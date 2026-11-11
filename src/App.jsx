@@ -109,7 +109,7 @@ const clientResults = [
     id: 'client-7',
     before: '/after7.jpeg',
     after: '/after8.jpeg',
-    text: "النضارة والدورة والنعومة",
+    text: "النضارة والنعومة",
   },
   {
     id: 'client-8',
