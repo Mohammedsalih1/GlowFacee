@@ -83,8 +83,8 @@ const clientResults = [
   },
   {
     id: 'client-1',
-    before: '/before1.jpeg',
-    after: '/after1.jpeg',
+    before: '/after1.jpeg',
+    after: '/before1.jpeg',
     text: "علاج آثار الحبوب بفعالية",
     noValue: true
 
