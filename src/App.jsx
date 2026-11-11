@@ -122,7 +122,7 @@ const clientResults = [
     id: 'client-4',
     before: '/after9.jpeg',
     after: '/after10.jpeg',
-    // text: "تخفيف التصبغات",
+    text: "تفتيح ونضارة ونعومة",
     // noValue: true
   },
 ];
